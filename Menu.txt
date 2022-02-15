@@ -1,0 +1,84 @@
+<?php include("dataconnection.php"); ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+	
+	<title>Health Mart</title>
+	<link rel="stylesheet" href="MenuPage.css">
+</head>
+<body>
+
+<?php
+	//echo "<p><a href='#'>Add Product</a></p>";
+	
+	//echo "<p><a href='#'>Edit Product</a></p>";
+	
+	//echo "<p><a href='#'>View Product</a></p>";
+	
+	//echo "<p><a href='#'>Delete Product</a></p>";
+//?>
+
+	<div class="wrapper">
+		<div class="sidebar">
+			<ul>
+				<li class="active"><a href="Menu.php"><i class="las la-home" title="Home"></i></a></li>
+				<li><a href="Add Product.php"><i class="las la-plus-circle" title="Add Product"></i></a></li>
+				<li><a href="ProductEdit(Main).php"><i class="las la-edit" title="Edit Product"></i></a></li>
+				<li><a href="View Product.php"><i class="las la-cube" title="View Product"></i></a></li>
+				<li><a href=""><i class="las la-trash-alt" title="Delete Product"></i></a></li>
+				<li><a href=""><i class="#"></i></a></li>
+			</ul>
+		</div>
+		<div class="main">
+			<div class="head">
+				<div class="head-title">
+					<p>Health<b>Mart</b></p>
+					<h2>Pharmacy | Home<h2>
+				</div>
+			</div>
+			<div class="main-board">
+				<div class="card-board">
+					<div class="card">
+						<div class="card-icon">
+							<i class="las la-cube"></i>
+							<a href="View Product.php"><i class="las la-info-circle"></i></a>
+						</div>
+						<span>Total Product</span>
+						<h2>
+						<?php
+							$result = mysqli_query($connect, "SELECT * from addproduct");	
+							$count = mysqli_num_rows($result);//used to count number of rows
+						?>
+						<?php echo $count; ?>
+						</h2>
+					</div>
+					<div class="card">
+						<div class="card-icon">
+							<i class="las la-cube"></i>
+							<a href="#"><i class="las la-info-circle"></i></a>
+						</div>
+						<span>Total Price</span>
+						<h2></h2>
+					</div>
+					<div class="card">
+						<div class="card-icon">
+							<i class="las la-cube"></i>
+							<a href="#"><i class="las la-info-circle"></i></a>
+						</div>
+						<span>Total Product</span>
+						<h2></h2>
+					</div>
+				</div>
+				
+			</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
